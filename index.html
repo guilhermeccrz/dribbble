@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Desafio Front-End #001</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+	<script data-main="js/app" src="js/libs/require.js"></script>
+</head>
+<body>
+
+<div class="content"></div>
+
+<script id="template-pagination" type="text/x-handlebars-template">
+<div class="container">
+	<div class="page-header">
+		<h1>Desafio Front-End #001 <small> Ao infinito e além.</small></h1>
+	</div>
+
+	<nav>
+	  <ul class="pagination">
+	    <li>
+	      <a href="#" aria-label="Previous">
+	        <span aria-hidden="true">&laquo;</span>
+	      </a>
+	    </li>
+
+	    {{#times this}}
+	    	<li><a href="#page/{{this}}">{{this}}</a></li>
+	    {{else}}
+	    {{/times}}
+
+		<li>
+	      <a href="#" aria-label="Next">
+	        <span aria-hidden="true">&raquo;</span>
+	      </a>
+	    </li>
+	  </ul>
+	</nav>
+	
+</div>	
+</script>
+
+<script id="template" type="text/x-handlebars-template">
+	<div class="container">
+
+			{{#everyNth [].model  3}}
+				{{#if isModZeroNotFirst}}
+			    	</div>
+			  	{{/if}}
+
+				{{#if isModZero}}
+				    <div class="row">
+
+
+				{{/if}}
+
+						<div class="col-md-4">
+						    <div class="panel panel-default">
+				 			<div class="panel-body">
+							<a href="#shots/{{this.id}}">
+									<img src="{{this.image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive" />
+									<div class="col-xs-6-details div-transparent">
+										<span class="detail-span">{{this.title}}</span>
+										<div class="detais-views pull-right">
+											<i class="glyphicon glyphicon-eye-open"></i>
+											<span>{{this.views_count}}</span>
+										</div>
+									</div>
+							</a>
+							</div>
+							</div>		
+						</div>
+
+				{{#if isLast}}
+	   				</div>
+	 			{{/if}}
+
+			{{/everyNth}}
+
+	</div>
+
+</script>
+
+<script id="templateShotDetail" type="text/x-handlebars-template">
+	<div class="container">
+
+		<div class="page-header">
+		  <h1>{{title}}</h1>
+		</div>
+
+		<div class="row row-centered">
+
+			<div class="col-md-4 col-centered center-block">
+				<div class="panel panel-default">
+				 	<div class="panel-body">
+						<img src="{{image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive" />
+						<div class="col-xs-6-details div-transparent">
+							<span class="detail-span">{{this.title}}</span>
+							<div class="detais-views pull-right">
+								<i class="glyphicon glyphicon-eye-open"></i>
+								<span>{{views_count}}</span>
+							</div>
+						</div>
+						<img src="{{player.avatar_url}}"  alt="shots shots shots everybody!" class="img-responsive circle-img" />
+						<span class="player_name">{{player.name}}</span>
+						<p class="player_description">{{{description}}}</p>
+					</div>	
+				</div>		
+			</div>
+
+		</div>
+	</div>
+
+</script>
+
+
+</body>
+</html>
