@@ -6,6 +6,8 @@
 	<title>Desafio Front-End #001</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" media="all">
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="all">
+	
 	<link rel="stylesheet" type="text/css" href="css/main.css" media="all">
 	<script data-main="js/app" src="js/libs/require.js"></script>
 </head>
@@ -16,7 +18,7 @@
 <script id="template-pagination" type="text/x-handlebars-template">
 <div class="container">
 	<div class="page-header">
-		<h1>Desafio Front-End #001 <small> Ao infinito e além.</small></h1>
+		<h1>#Dribbbe API TEST do Ronaldinho Gaúcho <small> Ao infinito e além.</small></h1>
 	</div>
 
 	<nav>
@@ -61,8 +63,9 @@
 						    <div class="panel panel-default">
 				 			<div class="panel-body">
 							<a href="#shots/{{this.id}}">
-									<img src="{{this.image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive" />
-									<div class="col-xs-6-details div-transparent">
+									<img src="{{this.image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive center-block" />
+
+									<div class="col-xs-6-details div-transparent center-block">
 										<span class="detail-span">{{this.title}}</span>
 										<div class="detais-views pull-right">
 											<i class="glyphicon glyphicon-eye-open"></i>
@@ -70,6 +73,13 @@
 										</div>
 									</div>
 							</a>
+
+							<div class="div-transparent-share">
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa-dribbble"></i></a>
+							</div>
+
 							</div>
 							</div>		
 						</div>
@@ -91,18 +101,26 @@
 		  <h1>{{title}}</h1>
 		</div>
 
+		<a href="javascript:history.back();"><i class="glyphicon glyphicon-chevron-left"></i>Voltar</a>
+
+
 		<div class="row row-centered">
 
 			<div class="col-md-4 col-centered center-block">
 				<div class="panel panel-default">
 				 	<div class="panel-body">
-						<img src="{{image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive" />
-						<div class="col-xs-6-details div-transparent">
+						<img src="{{image_url}}" width="400" height="300" alt="shots shots shots everybody!" class="img-responsive center-block" />
+						<div class="col-xs-6-details div-transparent center-block">
 							<span class="detail-span">{{this.title}}</span>
 							<div class="detais-views pull-right">
 								<i class="glyphicon glyphicon-eye-open"></i>
 								<span>{{views_count}}</span>
 							</div>
+						</div>
+						<div class="div-transparent-share">
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa-dribbble"></i></a>
 						</div>
 						<img src="{{player.avatar_url}}"  alt="shots shots shots everybody!" class="img-responsive circle-img" />
 						<span class="player_name">{{player.name}}</span>
